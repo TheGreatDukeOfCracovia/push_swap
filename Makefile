@@ -18,7 +18,7 @@ OBJECTS = $(SOURCES:.c=.o)
 CC = clang
 CFLAGS = -Wall -Wextra -Werror -g
 
-LIBDIR = libft
+LIBDIR = libft/
 LIBFT = libft.a
 
 BONUS_NAME = checker
@@ -54,7 +54,7 @@ clean :
 	$(RM) $(OBJECTS) $(BONUS_OBJECTS)
 
 fclean : clean
-	make fclean -C $(LIBDIR)
+	$(RM) $(LIBDIR)$(LIBFT)
 	$(RM) $(NAME) $(BONUS_NAME)
 
 re : fclean all
