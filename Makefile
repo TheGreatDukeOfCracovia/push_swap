@@ -40,14 +40,14 @@ all : $(NAME)
 
 $(NAME) : $(OBJECTS)
 	make -C $(LIBDIR)
-	$(CC) $(OBJECTS) -o $(NAME) -L $(LIBDIR) -l:$(LIBFT)
+	$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME) -L $(LIBDIR) -l:$(LIBFT)
 
 %.o : %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 bonus : $(BONUS_OBJECTS)
 	make -C $(LIBDIR)
-	$(CC) $(BONUS_OBJECTS) -o $(BONUS_NAME) -L $(LIBDIR) -l:$(LIBFT)
+	$(CC) $(CFLAGS) $(BONUS_OBJECTS) -o $(BONUS_NAME) -L $(LIBDIR) -l:$(LIBFT)
 
 clean :
 	make clean -C $(LIBDIR)
