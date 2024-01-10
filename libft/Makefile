@@ -46,6 +46,7 @@ SOURCES = get_next_line.c\
 OBJECTS = $(SOURCES:.c=.o)
 FLAGS = -Wall -Wextra -Werror
 CC = clang
+RM = rm -f
 
 all : $(NAME)
 
@@ -56,10 +57,10 @@ $(NAME) : $(OBJECTS)
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean :
-	rm -rf $(OBJECTS)
+	$(RM) $(OBJECTS)
 
 fclean : clean
-	rm -rf $(NAME)
+	$(RM) $(NAME)
 
 re : fclean all
 

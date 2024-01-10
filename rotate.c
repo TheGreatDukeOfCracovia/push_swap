@@ -6,7 +6,7 @@
 /*   By: tde-la-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 17:35:16 by tde-la-r          #+#    #+#             */
-/*   Updated: 2024/01/03 17:35:40 by tde-la-r         ###   ########.fr       */
+/*   Updated: 2024/01/10 10:24:53 by tde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	rotate(t_stack **stack)
 	ft_stkadd_back(stack, *stack);
 	tmp = *stack;
 	*stack = (*stack)->next;
-	(*stack)->prev = NULL;
 	tmp->next = NULL;
 }
 

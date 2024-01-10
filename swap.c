@@ -6,7 +6,7 @@
 /*   By: tde-la-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 17:35:02 by tde-la-r          #+#    #+#             */
-/*   Updated: 2024/01/03 17:35:09 by tde-la-r         ###   ########.fr       */
+/*   Updated: 2024/01/10 10:24:32 by tde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,18 @@
 
 void	swap(t_stack **stack)
 {
+	t_stack	*tmp;
+
 	if (!stack)
 		return ;
 	if (!*stack)
 		return ;
 	if (!(*stack)->next)
 		return ;
-	(*stack)->prev = (*stack)->next;
+	tmp = (*stack)->next;
 	(*stack)->next = (*stack)->next->next;
-	(*stack)->prev->prev = NULL;
-	(*stack)->prev->next = *stack;
-	*stack = (*stack)->prev;
-	if ((*stack)->next->next)
-		(*stack)->next->next->prev = (*stack)->next;
+	tmp->next = *stack;
+	*stack = tmp;
 }
 
 void	sa(t_stack **a)

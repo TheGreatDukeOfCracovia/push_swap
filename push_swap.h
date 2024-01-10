@@ -6,7 +6,7 @@
 /*   By: tde-la-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 23:29:16 by tde-la-r          #+#    #+#             */
-/*   Updated: 2024/01/08 10:19:47 by tde-la-r         ###   ########.fr       */
+/*   Updated: 2024/01/10 10:18:57 by tde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ typedef struct s_stack
 	int				index;
 	t_move			*move;
 	struct s_stack	*target;
-	struct s_stack	*prev;
 	struct s_stack	*next;
 }					t_stack;
 

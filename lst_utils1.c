@@ -6,7 +6,7 @@
 /*   By: tde-la-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 17:09:18 by tde-la-r          #+#    #+#             */
-/*   Updated: 2024/01/05 00:13:15 by tde-la-r         ###   ########.fr       */
+/*   Updated: 2024/01/10 10:19:47 by tde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ t_stack	*ft_stknew(int num)
 	new_node->move = NULL;
 	new_node->target = NULL;
 	new_node->next = NULL;
-	new_node->prev = NULL;
 	return (new_node);
 }
 
@@ -48,7 +47,6 @@ void	ft_stkadd_back(t_stack **lst, t_stack *new)
 	else
 	{
 		last = ft_stklast(*lst);
-		new->prev = last;
 		last->next = new;
 	}
 }
@@ -62,8 +60,6 @@ void	ft_stkadd_front(t_stack **lst, t_stack *new)
 	tmp = *lst;
 	*lst = new;
 	new->next = tmp;
-	if (tmp)
-		tmp->prev = new;
 }
 
 int	ft_stksize(t_stack *stk)

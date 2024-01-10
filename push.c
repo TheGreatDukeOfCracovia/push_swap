@@ -6,7 +6,7 @@
 /*   By: tde-la-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 17:33:48 by tde-la-r          #+#    #+#             */
-/*   Updated: 2024/01/03 17:34:40 by tde-la-r         ###   ########.fr       */
+/*   Updated: 2024/01/10 10:20:52 by tde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,8 @@ void	push(t_stack **stack_in, t_stack **stack_out)
 		return ;
 	tmp = (*stack_out)->next;
 	(*stack_out)->next = *stack_in;
-	if (*stack_in)
-		(*stack_in)->prev = *stack_out;
 	*stack_in = *stack_out;
 	*stack_out = tmp;
-	if (*stack_out)
-		(*stack_out)->prev = NULL;
 }
 
 void	pa(t_stack **a, t_stack **b)

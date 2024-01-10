@@ -6,7 +6,7 @@
 /*   By: tde-la-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 17:35:46 by tde-la-r          #+#    #+#             */
-/*   Updated: 2024/01/03 17:36:43 by tde-la-r         ###   ########.fr       */
+/*   Updated: 2024/01/10 10:25:08 by tde-la-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	reverse_rotate(t_stack **stack)
 		penultimate = penultimate->next;
 	last = penultimate->next;
 	penultimate->next = NULL;
-	last->prev = NULL;
 	ft_stkadd_front(stack, last);
 }
 
